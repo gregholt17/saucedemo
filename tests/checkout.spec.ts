@@ -26,8 +26,15 @@ test('Checkout', async () => {
     const options: TimeoutOption = { timeout: DEFAULT_ACTION_TIMEOUT_MS };
     await homePage.initialiseHomePage({ username, password, options});
     const inventoryItems: InventoryItem[] = await homePage.getInventoryItems();
+    let filteredInventoryItems: InventoryItem[] = [];
+    for (const inventoryItem of inventoryItems) {
+        const { name } = inventoryItem;
+        if (!(name.includes('Test.allTheThings'))) {
+            filteredInventoryItems.push(inventoryItem);
+        }
+    }
     // console.log(`Inventory Items:\n${JSON.stringify(inventoryItems, null, 2)}`);
-    const randomInventoryItem: InventoryItem = pickRandomInventoryItem(inventoryItems);
+    const randomInventoryItem: InventoryItem = pickRandomInventoryItem(filteredInventoryItems);
     const { name, description, price } = randomInventoryItem;
     // console.log(`Name: ${JSON.stringify(name, null, 2)} Price: ${JSON.stringify(price, null, 2)}`);
     await homePage.addItemToCart(name as InventoryItemName);

@@ -18,7 +18,7 @@ class HomePage extends LoginPage {
         'Sauce Labs Bike Light': '#add-to-cart-sauce-labs-bike-light',
         'Sauce Labs Bolt T-Shirt': '#add-to-cart-sauce-labs-bolt-t-shirt',
         'Sauce Labs Fleece Jacket': '#add-to-cart-sauce-labs-fleece-jacket',
-        'Sauce Labs Onesie': '#add-to-cart-sauce-labs-onesie'
+        'Sauce Labs Onesie': '#add-to-cart-sauce-labs-onesie',
     }
 
     shoppingCartSelector: string = '#shopping_cart_container';
