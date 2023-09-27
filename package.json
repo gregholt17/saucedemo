@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "login": "npx playwright test tests/login.spec.ts",
+    "homepage": "npx playwright test tests/homepage.spec.ts",
+    "checkout": "npx playwright test tests/checkout.spec.ts"
+  },
   "keywords": [],
   "author": "Greg Holt",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.38.1",
     "@types/node": "^20.7.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
   }
 }
